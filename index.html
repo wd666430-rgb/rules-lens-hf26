@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#102a43" />
+    <meta name="description" content="在浏览器本地用开源模型从活动规则中定位报名费、资格、截止时间、奖金和收款方式的原文证据。" />
+    <title>Rules Lens — 找到原文，再做决定</title>
+    <script type="module" crossorigin src="./assets/index-BIy3nZ2B.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Cm6RfsD2.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Rules Lens 首页"><span class="brand-mark">✦</span><span>RULES<span class="brand-light">LENS</span></span></a>
+        <span class="top-pill"><span class="dot"></span> 本地模型 · 原文证据</span>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="eyebrow"><span class="eyebrow-line"></span> BUILD FOR A FRIEND · 2026</div>
+          <h1 id="hero-title">先找到原文，<br /><em>再决定要不要报名。</em></h1>
+          <p class="hero-copy">把比赛或悬赏规则粘贴进来。Rules Lens 用浏览器本地运行的开源模型寻找关键条款，展示原句和匹配提示。找不到收款方式，就老实说「未知」。</p>
+          <div class="hero-chips"><span>零付费 API</span><span>不上传粘贴内容</span><span>缺失信息不补写</span></div>
+        </section>
+
+        <section class="workspace" aria-labelledby="workspace-title">
+          <div class="workspace-head"><div><div class="section-kicker">01 / 规则原文</div><h2 id="workspace-title">贴入官方文本</h2></div><div class="workspace-head-note">建议连同来源链接一起保留，方便人工复核。</div></div>
+          <label class="field-label" for="source-url">来源链接 <span>可选；仅作记录，不会自动抓取</span></label>
+          <input id="source-url" type="url" inputmode="url" placeholder="https://example.org/official-rules" autocomplete="off" />
+          <label class="field-label" for="rules-text">活动规则 <span>最多 18,000 字符</span></label>
+          <textarea id="rules-text" maxlength="18000" spellcheck="false" placeholder="粘贴比赛、悬赏或奖项的官方规则。请包含报名费用、参赛资格、截止时间、奖金和收款条款（若有）。"></textarea>
+          <div class="input-footer"><span id="char-count">0 / 18,000</span><div class="actions"><button id="sample-button" class="button button-ghost" type="button">载入虚构示例</button><button id="analyze-button" class="button button-primary" type="button">定位条款 <span aria-hidden="true">↗</span></button></div></div>
+          <div id="status" class="status" role="status" aria-live="polite"><span class="status-icon">i</span><span>首次分析需联网下载约 23 MB 开源模型；浏览器通常会缓存模型和运行库，后续可复用。离线是否可用取决于浏览器缓存。</span></div>
+        </section>
+
+        <section id="results-section" class="results-section" aria-labelledby="results-title" hidden>
+          <div class="results-head"><div><div class="section-kicker">02 / 检索结果</div><h2 id="results-title">五个要核对的问题</h2></div><span class="evidence-tag">引用来自粘贴原文</span></div>
+          <div id="results" class="results-grid"></div>
+          <div class="result-note"><strong>怎么读结果</strong><p>「较强匹配 / 需要复核」只描述语义检索与关键词线索，不是事实正确率。模型不会替你确认资格、合同效力或实际到账。请打开官方来源核对完整上下文。</p></div>
+        </section>
+
+        <section class="how-section" aria-labelledby="how-title"><div class="section-kicker">03 / 工作方式</div><h2 id="how-title">证据留在句子里</h2><div class="how-grid"><div><span class="how-number">01</span><h3>切分原文</h3><p>按句和行保留原始措辞，避免生成新的「答案」。</p></div><div><span class="how-number">02</span><h3>本地向量检索</h3><p>Apache-2.0 授权的 MiniLM 在浏览器内计算语义相似度。</p></div><div><span class="how-number">03</span><h3>保守呈现</h3><p>只展示与问题有关的原句；没有明确线索就标「未找到」。</p></div></div></section>
+      </main>
+      <footer><span>Rules Lens · A small open-source experiment</span><span>研究辅助工具 · 报名之前请核对官方全文</span></footer>
+    </div>
+  </body>
+</html>
