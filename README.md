@@ -1,5 +1,7 @@
 # Rules Lens
 
+**[Try the live demo](https://wd666430-rgb.github.io/rules-lens-hf26/)** · [View the verified sample result](PRODUCTION_SUBPATH_E2E.png)
+
 Rules Lens is a small, browser-local evidence finder for someone comparing cash-prize opportunities on a limited budget. Paste the official rules and it locates candidate original sentences for five questions: entry fee, eligibility, deadline, cash prize, and payout method. It does not invent an answer when the text is silent.
 
 This project was started on October 3, 2026 for the Hacktoberfest Weekend Challenge. It is a **new project**. The earlier Proof Desk project suggested the general problem, but Rules Lens has a different implementation: local model inference and automatic, quote-preserving evidence retrieval. No Proof Desk code was copied. The particular person and their relationship to the author should be described only with their consent and accurate facts in any contest write-up.
